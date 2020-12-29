@@ -37,7 +37,7 @@ module.exports = {
         },
         
         {
-          href: 'https://github.com/facebook/docusaurus',  // 如果要跳转链接则使用 herf
+          href: 'https://github.com/rcxxx/docusaurus-template',  // 如果要跳转链接则使用 herf
           label: '本站源码',
           position: 'right',
         },

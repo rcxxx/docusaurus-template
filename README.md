@@ -130,6 +130,50 @@ GIT_USER=<GITHUB_USERNAME> yarn deploy
 ```
 等待运行完成就部署完成了，就可以通过你配置好的 **`url`** 访问你的页面了
 
+### 配置Git Action 实现自动部署
+假设我们的源文件储存在仓库的 **`master`** 分支中，而页面部署在 **`gh-pages`** 分支，可以参考如下操作
+1. 生成一个新的 [SSH key](https://docs.github.com/en/free-pro-team@latest/github/authenticating-to-github/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent)
+-  **`ssh-keygen -t rsa -C "user@email.com"`**
+   - 输入后终端提示你选择 **`SSH key`** 的保存路径，默认为 **`~/.ssh/id_rsa`**，建议将 **`id_rsa`** 修改为其他名称，例如 **`~/.ssh/id_rsa_action`**，接下来两个提示回车默认即可
+   - 这里不用默认名称是为了不与默认的全局**SSH key**冲突，具体问题参考[👉这里](https://www.jianshu.com/p/f7f4142a1556)
+
+2. 将生成的 **`id_rsa_action.pub`** 添加到你仓库的 **`settings -> Deploy keys`**
+
+3. 将生成的 **`id_rsa_action`** 添加到你仓库的 **`settings -> Secrets`**
+   - 将 **`Name`** 设置为 **`GH_PAGES_DEPLOY`**
+
+
+修改 `.github/workflows/doc-action.yml` 文件
+
+``` yml
+- name: Release to GitHub Pages
+    env:
+    USE_SSH: true
+    GIT_USER: user
+    run: |
+    git config --global user.email "user@email.com"
+    git config --global user.name "user"
+    if [ -e yarn.lock ]; then
+    yarn install --frozen-lockfile
+    elif [ -e package-lock.json ]; then
+    npm ci
+    else
+    npm i
+    fi
+    npx docusaurus deploy
+```
+
+- 有几个地方要修改
+  - **`GIT_USER: user`** 中的**user**修改为你**Github**的用户名
+  - **`git config --global user.email "user@email.com"`** 修改为你**Github**的邮箱
+  - **`git config --global user.name "user"`** 中的**user**修改为你**Github**的用户名
+
+设置完毕后，当**master** 分支有新的拉取请求，会自动确保 **Docusaurus** 构建成功
+
+每当有新的内容被推送到 **master** 分支，将会自动构建并且部署到 **`gh-pages`**
+
+等待 **Git Action** 执行完毕，就可以在网页上看到你的站点了
+
 
 
 ## 参考与致谢
