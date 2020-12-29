@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://github.com/rcxxx/docusaurus-template/</id>
+    <title>Someone's Site Blog</title>
+    <updated>2020-12-29T08:26:57.516Z</updated>
+    <generator>https://github.com/jpmonette/feed</generator>
+    <link rel="alternate" href="https://github.com/rcxxx/docusaurus-template/"/>
+    <subtitle>Someone's Site Blog</subtitle>
+    <icon>https://github.com/rcxxx/docusaurus-template/img/favicon.ico</icon>
+    <entry>
+        <title type="html"><![CDATA[第一篇博客]]></title>
+        <id>hello-blog</id>
+        <link href="https://github.com/rcxxx/docusaurus-template/docusaurus-template/hello-blog"/>
+        <updated>2020-12-29T08:26:57.516Z</updated>
+        <summary type="html"><![CDATA[博客的标题和预览部分]]></summary>
+    </entry>
+</feed>
