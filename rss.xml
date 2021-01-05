@@ -4,14 +4,14 @@
         <title>Someone's Site Blog</title>
         <link>https://github.com/rcxxx/docusaurus-template/</link>
         <description>Someone's Site Blog</description>
-        <lastBuildDate>Sat, 02 Jan 2021 09:15:10 GMT</lastBuildDate>
+        <lastBuildDate>Tue, 05 Jan 2021 11:39:43 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <item>
             <title><![CDATA[第一篇博客]]></title>
             <link>https://github.com/rcxxx/docusaurus-template/docusaurus-template/hello-blog</link>
             <guid>hello-blog</guid>
-            <pubDate>Sat, 02 Jan 2021 09:15:10 GMT</pubDate>
+            <pubDate>Tue, 05 Jan 2021 11:39:43 GMT</pubDate>
             <description><![CDATA[博客的标题和预览部分]]></description>
         </item>
     </channel>
