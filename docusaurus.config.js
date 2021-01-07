@@ -10,7 +10,22 @@ module.exports = {
   organizationName: 'rcxxx',            // 设置为 Github 用户名
   projectName: 'docusaurus-template',   // 设置为 Github 仓库名
   
+  
   themeConfig: {
+
+    // 配置搜索栏需要到 algolia 配置
+    // algolia: {
+    //   apiKey: 'YOUR_API_KEY',
+    //   indexName: 'YOUR_INDEX_NAME',
+
+    //   // Optional: see doc section bellow
+    //   contextualSearch: true,
+
+    //   // Optional: Algolia search parameters
+    //   searchParameters: {},
+
+    //   //... other Algolia params
+    // },
     // 导航栏配置
     navbar: {
       title: "Someone's Site",                 // 名称
