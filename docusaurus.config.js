@@ -5,7 +5,7 @@ module.exports = {
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',           // 站点的图标
   
-  url: '', // GitHub 页面的 URL
+  url: 'https://your-docusaurus-test-site.com', // GitHub 页面的 URL
   baseUrl: '/',                         // 项目的基本 URL 设置为 /仓库名/
   organizationName: '',            // 设置为 Github 用户名
   projectName: '',   // 设置为 Github 仓库名
