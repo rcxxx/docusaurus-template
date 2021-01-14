@@ -1,3 +1,6 @@
+const math = require('remark-math');
+const katex = require('rehype-katex');
+
 module.exports = {
   title: "Someone's Site",              // 站点名称
   tagline: 'The tagline of this site',  // 站点描述
@@ -80,6 +83,16 @@ module.exports = {
     },
   },
   
+  stylesheets: [
+    {
+      href: 'katex/v0.12.0/katex.min.css',
+      type: 'text/css',
+      integrity:
+        'sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X',
+      crossorigin: 'anonymous',
+    },
+  ],
+
   presets: [
     [
       '@docusaurus/preset-classic',
@@ -88,10 +101,13 @@ module.exports = {
           showReadingTime: true,
           path: "./blog",
           routeBasePath: "/",           // 这里将 blog/ 设置为首页
+          remarkPlugins: [math],
+          rehypePlugins: [katex],
         },
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
-          
+          remarkPlugins: [math],
+          rehypePlugins: [katex],
           // 修改为自己的链接，在文章底部添加编辑此页面的链接
           // editUrl:
           //   'https://github.com/facebook/docusaurus/edit/master/website/',
